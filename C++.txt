@@ -1,0 +1,472 @@
+STL list(double link list)
+-----------------------------
+⭐list<type>myList-->Construct a list with 0 elements--->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int> list_name;
+    cout<<list_name.size()<<endl;;
+}
+
+
+⭐list<type>myList(N);--->Construct a list with N elements and the value will be garbage.---->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int> list_name(10);
+    cout<<list_name.size()<<endl;;
+}
+
+
+⭐list<type>myList(N,V);-->Construct a list with N elements and the value will be V.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int> list_name(10,3);
+    cout<<list_name.size()<<endl;
+    cout<<*list_name.begin()<<endl;
+    cout<<*list_name.end()<<endl;
+    for(auto it=list_name.begin();it!=list_name.end();it++){
+        cout<<*it<<" ";
+    }
+}
+
+
+⭐list<type>myList(N,V);-->Construct a list with N elements and the value will be V.-->O(N)[easy way]
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int> list_name(10,3);
+    cout<<list_name.size()<<endl;
+    cout<<*list_name.begin()<<endl;
+    cout<<*list_name.end()<<endl;
+    for(int val:list_name){
+        cout<<val<<" ";
+    }
+}
+
+⭐list<type>myList(list2);-->Construct a list by copying another list list2.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2(list_1);
+    for(int val:list_2){
+        cout <<val<<" ";
+    }
+}
+
+
+⭐list<type>myList(A,A+N);-->Construct a list by copying all elements from an array-->A of size N.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a[]={1,3,5,7,9};
+    list<int>list_1(a,a+5);
+    for(int val:list_1){
+        cout << val<<" ";
+    }
+    
+}
+
+⭐list<type>myList(v.begin(),v.end());-->Construct a list by copying all elements from a vector v.--->O(N).
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vector_name={2,4,6,8,10};
+    list<int>list_1(vector_name.begin(),vector_name.end());
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+    
+}
+
+
+⭐myList.size()-->Returns the size of the list.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,4,6,8,3};
+    cout<<list_1.size()<<" ";
+    
+}
+
+
+⭐myList.max_size()-->Returns the maximum size that the list can hold.--->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1;
+    cout<<list_1.max_size()<<" ";
+    
+}
+
+
+⭐myList.clear()-->Clears the list elements.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vector_name={1,3,5,7,9};
+    list<int>list_1(vector_name.begin(),vector_name.end());
+    cout<<list_1.size()<<endl;
+    list_1.clear();
+    cout<<list_1.size()<<endl;
+    for(int val:list_1){
+        cout<<"Faka-->"<<val<<" ";
+    }
+    
+}
+
+⭐myList.empty()-->Return true/false if the list is empty or not.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vector_name={1,3,5,7,9};
+    list<int>list_1(vector_name.begin(),vector_name.end());
+    cout<<list_1.size()<<endl;
+    list_1.clear();
+    cout<<list_1.size()<<endl;
+    if(list_1.empty()){
+        cout<<"Empty";
+    }
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+
+⭐myList.resize()-->Change the size of the list.-->O(K); where K is the difference between new size and current size.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vector_name={1,3,5,7,9};
+    list<int>list_1(vector_name.begin(),vector_name.end());
+    cout<<list_1.size()<<endl;
+    list_1.resize(2);
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.resize()-->Change the size of the list.-->O(K); where K is the difference between new size and current size.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vector_name={1,3,5,7,9};
+    list<int>list_1(vector_name.begin(),vector_name.end());
+    cout<<list_1.size()<<endl;
+    list_1.resize(7); //bki gulo 0 dia fill hbe
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.resize()-->Change the size of the list.-->O(K); where K is the difference between new size and current size.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vector_name={1,3,5,7,9};
+    list<int>list_1(vector_name.begin(),vector_name.end());
+    cout<<list_1.size()<<endl;
+    list_1.resize(7,23); //bki gulo 0 dia fill hbe
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList= or myList.assign(list2.begin(),list2.end())--->Assign another list.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2;
+    list_2=list_1;
+    for(int val:list_2){
+        cout<<val<<" ";
+    }
+}
+
+⭐myList.push_back()and push_front()-->Add an element to the tail.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2;
+    list_2=list_1;
+    list_2.push_back(40);
+    list_2.push_front(00);
+    for(int val:list_2){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.push_front()and pop_front()-->Add an element to the head.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2;
+    list_2=list_1;
+    
+    list_2.push_back(40);
+    list_2.push_front(00);
+    
+    list_2.pop_back();
+    list_2.pop_front();
+    for(int val:list_2){
+        cout<<val<<" ";
+    }
+}
+
+⭐myList.insert()-->Insert elements at a specific position.-->O(N+K); where K is the number of elements to be inserted.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2;
+    list_2=list_1;
+    
+    cout<<*next(list_2.begin(),2); 
+    
+
+}
+
+
+⭐myList.insert()-->Insert elements at a specific position.-->O(N+K); where K is the number of elements to be inserted.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2;
+    list_2=list_1;
+
+    list_2.insert(next(list_2.begin(),2),100);//2 number index e 100 add hbe
+    for(int val:list_2){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐ist 2 er value list 1 e add korlm
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    list<int>list_2={100,200};
+    
+
+    list_1.insert(next(list_1.begin(),2),list_2.begin(),list_2.end()); //list 2 er value list 1 e add korlm
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+⭐Insert vector in a list
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5};
+    vector<int>vector_1={3,5,7,9};
+    list_1.insert(next(list_1.begin(),2),vector_1.begin(),vector_1.end()); 
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+⭐myList.erase()-->Delete elements from a specific position.-->O(N+K); where K is the number of elements to be deleted.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,99,97,86,45};
+    list_1.erase(next(list_1.begin(),3));
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.erase()-->Delete elements from any position.-->O(N+K); where K is the number of elements to be deleted.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,99,97,86,45};
+    list_1.erase(next(list_1.begin(),3),next(list_1.begin(),5));
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐replace(myList.begin(),myList.end(),value,replace_value)-->Replace all the value with replace_value. Not under a list STL.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    replace(list_1.begin(),list_1.end(),2,100);//2 er jaygay 100 hbe
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐find(myList.begin(),myList.end(),V)-->Find the value V. Not under a list STL.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    auto it=find(list_1.begin(),list_1.end(),200);
+    if(it==list_1.end()){
+        cout<<"Not found";
+    }
+    else{
+        cout<<"found";
+    }
+}
+
+⭐myList.remove(V)-->Remove the value V from the list.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    list_1.remove(2);
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.sort()-->Sort the list in ascending order.-->O(NlogN)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    list_1.sort();
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.sort(greater<type>())-->Sort the list in descending order-->O(NlogN)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    list_1.sort(greater<int>());
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.unique()-->Deletes the duplicate values from the list. You must sort the list first.-->O(N), with sort O(NlogN)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    list_1.unique(); //eta sudhu sorted thakle kaj korbe
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+
+⭐myList.reverse()-->Reverse the list.-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    list_1.reverse();
+    for(int val:list_1){
+        cout<<val<<" ";
+    }
+}
+
+⭐myList.back()-->Access the tail element.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    cout<<list_1.back()<<endl;
+    cout<<list_1.front();
+}
+
+⭐myList.front(->Access the head element->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    cout<<list_1.back()<<endl;
+    cout<<list_1.front();
+}
+
+⭐next(myList.begin(),i)-->Access the ith element-->O(N)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    cout<<list_1.back()<<endl;
+    cout<<list_1.front()<<endl;;
+    cout<<*next(list_1.begin(),2);
+}
+
+⭐myList.back()-->Pointer to the first element.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    cout<<list_1.front()<<endl;
+    cout<<list_1.back()<<endl;
+}
+
+⭐myList.front()-->Pointer to the last element.-->O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    list<int>list_1={1,2,3,4,5,2,2,86,2};
+    cout<<list_1.front()<<endl;
+    cout<<list_1.back()<<endl;
+}
